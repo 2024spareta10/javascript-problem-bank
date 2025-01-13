@@ -18,6 +18,13 @@ let arr;
 let obj;
 let undef;
 let nul;
+num = 100;
+str = "Hello";
+bool = true;
+arr = [1,2,3];
+obj = {name:"JS"};
+// undef = undefined;
+nul = null;
 
 // export 를 수정하지 마세요.
 export { num, str, bool, arr, obj, undef, nul };
