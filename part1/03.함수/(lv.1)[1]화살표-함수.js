@@ -11,6 +11,7 @@
 
 const multiplyByTwo = (x) => {
   // TODO: 숫자 x 를 받아 2배로 곱한 값을 반환
+  return 2*x;
 };
 
 // export 를 수정하지 마세요.

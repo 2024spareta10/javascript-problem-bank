@@ -11,6 +11,8 @@
  */
 function getDayName(dayNumber) {
   // TODO
+  let dayWeek = ["", "월", "화", "수", "목", "금", "토", "일"];
+  return (dayNumber > 7 || dayNumber < 1) ? "Invalid" : dayWeek[dayNumber];
 }
 
 // export 를 수정하지 마세요.

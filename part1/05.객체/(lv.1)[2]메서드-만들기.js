@@ -12,8 +12,14 @@ const age = 25;
 
 const person = {
   // TODO: introduce 메서드를 작성하세요.
-  introduce() {},
+  name:name,
+  age:age,
+  introduce: function(){
+    return`안녕하세요, 저는 ${this.name}이고 ${this.age}살입니다.`;
+  },
 };
+
+
 
 // export를 수정하지 마세요.
 export { person };
