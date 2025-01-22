@@ -11,5 +11,8 @@
 let resolvePromise;
 let rejectPromise;
 
+resolvePromise = Promise.resolve("Hello");
+rejectPromise = Promise.reject("Error!");
+
 // export를 수정하지 마세요.
 export { resolvePromise, rejectPromise };
