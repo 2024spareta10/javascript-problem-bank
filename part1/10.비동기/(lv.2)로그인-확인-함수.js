@@ -11,7 +11,7 @@
  * @returns {Promise<string>} "ok" 또는 "fail"
  */
 function loginRequest(id, pw) {
-    return Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
         if(id === "admin" && pw === "1234"){
             resolve("ok");
         }
