@@ -1,4 +1,5 @@
 /**
+import { it } from '@jest/globals';
  * [(lv.3)장바구니-독립-문제.js]
  *
  * 1) userACart와 userBCart가 동일한 객체 참조로 인해 쿠폰 적용 시 서로 간섭이 발생합니다.
@@ -20,12 +21,17 @@ function fixCartReferenceIssue() {
 
   // TODO: userBCart가 userACart와 독립된 복사본을 가지도록 해야 함
   let userBCart;
+  
+  userBCart = structuredClone(userACart);
 
   const coupon = 5000;
 
   applyCoupon(userBCart, coupon);
   function applyCoupon(cart, discount) {
     // TODO
+    cart.items.forEach(item => {
+      item.price -= discount;
+    })
   }
 
   return { userACart, userBCart };

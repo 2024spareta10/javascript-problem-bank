@@ -16,7 +16,13 @@
  * @returns {object}
  */
 
-function mergeObjects(...objs) {}
+function mergeObjects(...objs) {
+    let temp = {};
+    objs.forEach(obj => {
+        temp = {...temp, ...obj};
+    })
+    return temp;
+}
 
 // export를 수정하지 마세요.
 export { mergeObjects };
