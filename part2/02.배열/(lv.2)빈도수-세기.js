@@ -11,7 +11,24 @@
  */
 
 // TODO: 함수를 작성하세요.
-function getFrequency(arr) {}
+function getFrequency(arr) {
+    arr.sort();
+    console.log(arr);
+    let target;
+    let cnt = 0;
+    let ans = {};
+    arr.forEach(obj => {
+        if(target !== obj){
+            target = obj;
+            cnt = 0;
+        }
+        cnt++;
+        ans = {...ans, [target]:cnt};
+        console.log(ans);
+    });
+
+    return ans;
+}
 
 // export 를 수정하지 마세요.
 export { getFrequency };

@@ -17,11 +17,35 @@ let topKeywordsCache = [];
 
 function updateTopKeywords(keywords) {
   // TODO
+  keywords.sort();
+  let target;
+  let cnt = 0;
+  let ans = [];
+  keywords.forEach((obj) => {
+    if (target !== obj) {
+      target ? ans.push([target, cnt]) : 0;
+      target = obj;
+      cnt = 0;
+    }
+    cnt++;
+  });
+  ans.push([target, cnt]);
+  ans.sort((a, b) => {
+    return b[1] - a[1];
+  });
+  cnt = 0;
+  topKeywordsCache = [];
+  ans.forEach((keyword) => {
+    cnt++;
+    if (cnt <= 10) {
+      topKeywordsCache.push(keyword[0]);
+    }
+  });
 }
 
 function getTopKeywords() {
   // TODO
-  return [];
+  return topKeywordsCache || [];
 }
 
 // export를 수정하지 마세요.

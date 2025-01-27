@@ -9,7 +9,11 @@
  * @returns {string}
  */
 
-function reverseString(str) {}
+function reverseString(str) {
+    return typeof str === 'string' ? [...str].reverse().join('') : '';
+}
+
+reverseString(123);
 
 // export 를 수정하지 마세요.
 export { reverseString };
