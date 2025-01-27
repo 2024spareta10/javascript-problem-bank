@@ -15,15 +15,22 @@
  */
 
 function createUserLogger() {
-    let userLogs = new Map();
-
-    const recordUserAction = (userId, action) => {
-        userLogs.has(userId)? _ : userLogs.set(userId, [action]) 
+  let userLogs = new Map();
+  const recordUserAction = (userId, action) => {
+    let target = userLogs.get(userId);
+    if (target) {
+      target.add(action);
+    } else {
+      userLogs.set(userId, new Set([action]));
     }
+  };
 
-    const getUserActions = (userId, action) => {
+  const getUserActions = (userId) => {
+    let target = userLogs.get(userId);
+    return target ? [...target] : [];
+  };
 
-    }
+  return { recordUserAction, getUserActions };
 }
 
 // export 를 수정하지 마세요.
