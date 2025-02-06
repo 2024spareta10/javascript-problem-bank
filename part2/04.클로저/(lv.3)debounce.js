@@ -12,10 +12,10 @@
 // TODO: debounce 함수를 작성하세요.
 function debounce(func, delay) {
   let timer;
-  return () => {
+  return (...args) => {
     clearTimeout(timer);
     timer = setTimeout(() => {
-      func(this);
+      func(...args);
     }, delay);
   };
 }

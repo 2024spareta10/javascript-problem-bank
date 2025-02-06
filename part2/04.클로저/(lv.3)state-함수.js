@@ -10,7 +10,17 @@
  * @returns {[any, Function]}
  */
 
-function makeState(initialValue) {}
+function makeState(initialValue) {
+  let state = initialValue;
+  const setValue = (value) => {
+    state = value;
+    return state;
+  };
+  return [state, setValue];
+}
+
+const [count] = makeState(0);
+console.log(count);
 
 // export를 수정하지 마세요.
 export { makeState };
