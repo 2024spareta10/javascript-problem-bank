@@ -10,12 +10,23 @@
  * @returns {void}
  */
 
-const inventory = [
+let inventory = [
   { id: 100, name: "Keyboard", stock: 10 },
   { id: 200, name: "Mouse", stock: 5 },
 ];
 
-function addProduct(newItem) {}
+function addProduct(newItem) {
+  inventory = inventory.some((item) => item.id === newItem.id)
+    ? inventory.map((item) => {
+        if (newItem.id == item.id) {
+          return { ...item, stock: newItem.stock + item.stock };
+        }
+        return item;
+      })
+    : [...inventory, newItem];
+}
+
+addProduct({ id: 100, name: "Keyboard", stock: 5 });
 
 // export를 수정하지 마세요.
 export { inventory, addProduct };

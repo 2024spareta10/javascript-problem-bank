@@ -12,7 +12,11 @@
  * @returns {string}
  */
 
-function normalizePath(path) {}
+function normalizePath(path) {
+  console.log(path.split(""));
+}
+
+normalizePath("/a/b/../c");
 
 // export 를 수정하지 마세요.
 export { normalizePath };
