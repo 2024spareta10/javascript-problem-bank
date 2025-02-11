@@ -12,7 +12,10 @@
  * @returns {number}
  */
 
-function daysBetween(date1, date2) {}
+function daysBetween(date1, date2) {
+  let diff = (Date.parse(date1) - Date.parse(date2)) / 86400000;
+  return diff >= 0 ? diff : -diff;
+}
 
 // export 를 수정하지 마세요.
 export { daysBetween };

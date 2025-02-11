@@ -10,7 +10,17 @@
  * @returns {string}
  */
 
-function formatDate(date) {}
+function formatDate(date) {
+  const year = date.getFullYear();
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+  const hour = date.getHours();
+  const min = date.getMinutes();
+  console.log(min);
+  //   console.log(date);
+}
+const date = new Date(2021, 0, 1, 1, 5);
+const result = formatDate(date);
 
 // export를 수정하지 마세요.
 export { formatDate };
