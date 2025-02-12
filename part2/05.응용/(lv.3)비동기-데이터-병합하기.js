@@ -24,5 +24,14 @@
 // TODO: asyncDataMerger 함수를 작성하세요.
 async function asyncDataMerger(...asyncFunctions) {}
 
+const fnA = async () => [
+  { id: 1, name: "Alice" },
+  { id: 2, age: 20 },
+];
+const fnB = async () => [
+  { id: 1, age: 25 },
+  { id: 3, gender: "F" },
+];
+const result = await asyncDataMerger(fnA, fnB);
 // export를 수정하지 마세요.
 export { asyncDataMerger };

@@ -16,11 +16,15 @@ function formatDate(date) {
   const day = date.getDate();
   const hour = date.getHours();
   const min = date.getMinutes();
-  console.log(min);
-  //   console.log(date);
+
+  return `${year}년 ${formatInt(month)}월 ${formatInt(day)}일 ${formatInt(
+    hour
+  )}시 ${formatInt(min)}분`;
 }
-const date = new Date(2021, 0, 1, 1, 5);
-const result = formatDate(date);
+
+function formatInt(num) {
+  return num < 10 ? `0${num}` : num;
+}
 
 // export를 수정하지 마세요.
 export { formatDate };

@@ -12,6 +12,12 @@
 // TODO: 함수를 작성하세요 (예: toggleCase)
 function toggleCase(str) {
   // TODO
+  let charList = [...str];
+  return charList
+    .map((char) => {
+      return char.charCodeAt(0) > 96 ? char.toUpperCase() : char.toLowerCase();
+    })
+    .join("");
 }
 
 // export 를 수정하지 마세요.
